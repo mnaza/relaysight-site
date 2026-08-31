@@ -20,3 +20,13 @@ document.querySelectorAll('[data-list]').forEach(node => {
     return item;
   }));
 });
+
+// The dashboard is a separate deployment, so these cannot stay relative. Every
+// link to it is rewritten from one brand setting; `data-app` carries the
+// fragment. Splitting the repositories broke all three of these silently, and
+// a dead call-to-action on the page that exists to convert is the worst place
+// for a link to rot.
+const appUrl = brand.appUrl || '/app/';
+document.querySelectorAll('[data-app]').forEach(node => {
+  node.href = appUrl + node.dataset.app;
+});

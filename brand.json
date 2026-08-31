@@ -31,5 +31,6 @@
   },
   "contact": {
     "salesEmail": "hello@example.com"
-  }
+  },
+  "appUrl": "/app/"
 }

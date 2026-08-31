@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "White-label VMS runtime brand configuration",
+  "title": "Marketing site runtime brand configuration",
   "type": "object",
   "required": [
     "name",
@@ -26,6 +26,10 @@
     },
     "customCssUrl": {
       "type": "string"
+    },
+    "appUrl": {
+      "type": "string",
+      "description": "Where the dashboard is served. Every link to it is rewritten from this at load, because the dashboard is a separate deployment."
     },
     "defaultLocale": {
       "type": "string",
