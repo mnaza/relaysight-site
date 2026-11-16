@@ -33,7 +33,10 @@ test('every link to the dashboard is driven by the brand setting', () => {
   // from brand.appUrl at load, so a deployment that serves the dashboard
   // somewhere else changes one value.
   const toApp = [...html.matchAll(/<a[^>]*href="(\/app\/[^"]*)"[^>]*>/g)].map(m => m[0]);
-  assert.ok(toApp.length >= 3, `expected the three dashboard links, found ${toApp.length}`);
+  // Only the demo link is left: the two calls to action lead to the
+  // repository's setup guide now, because there is no hosted signup to send
+  // anyone to (claims.test.mjs).
+  assert.ok(toApp.length >= 1, `expected the demo link, found ${toApp.length}`);
   for (const tag of toApp) {
     assert.match(tag, /data-app="/, `this link is not rewritten at runtime: ${tag}`);
   }

@@ -8,7 +8,7 @@ Static. No bundler, no framework, no build step. Open
 
 ## Why it is not in the core repository
 
-The core is GPL and people run it themselves. A page selling
+The core is AGPL-3.0 and people run it themselves. A page selling
 a hosted plan does not belong inside software someone
 installs on their own hardware.
 
@@ -32,13 +32,16 @@ npm install
 npm test
 ```
 
-40 of them, in jsdom. They check the contract, not the
-layout.
+In jsdom. They check the contract, not the layout.
 
 Every class the stylesheet styles is one the markup can
 produce. Every custom property a brand can set is read by
 some rule. Every key the page asks for exists in all three
-locales.
+locales, and every key a locale carries is one the page shows.
+
+The page promises nothing that is not there: no call to
+action leads to a hosted signup, and no paid plan lists
+something the free core already ships.
 
 There is no layout engine here, so nothing in this suite can
 tell you a grid collapsed. That needs a real browser.
